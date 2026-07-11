@@ -118,10 +118,11 @@ ccflags-y += -DCONFIG_WCN_BOOT
 ccflags-y += -DCONFIG_WCN_UTILS
 
 #### include path ######
-ccflags-y += -I$(src)/../tty-sdio
-ccflags-y += -I$(src)/include/
-ccflags-y += -I$(src)/platform/
-ccflags-y += -I$(src)/platform/rf/
+UNISOCWCN_DIR := $(srctree)/drivers/net/wireless/uwe5622/unisocwcn/
+ccflags-y += -I$(UNISOCWCN_DIR)/../tty-sdio
+ccflags-y += -I$(UNISOCWCN_DIR)/include/
+ccflags-y += -I$(UNISOCWCN_DIR)/platform/
+ccflags-y += -I$(UNISOCWCN_DIR)/platform/rf/
 
 #### add cflag for Customer ######
 ### ---------- Hisilicon start ---------- ###
@@ -386,7 +387,7 @@ KDIR ?= $(ANDROID_PRODUCT_OUT)/obj/KERNEL_OBJ
 ARCH ?= arm
 CROSS_COMPILE ?= arm-histbv310-linux-
 
-EXTRA_CFLAGS += -I$(src)/include -D__linux__
+EXTRA_CFLAGS += -I$(srctree)/drivers/net/wireless/uwe5622/unisocwcn/include -D__linux__
 
 all: $(all_dependencies)
 

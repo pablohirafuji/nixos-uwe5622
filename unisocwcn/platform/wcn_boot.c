@@ -106,7 +106,7 @@ struct gpio_config {
 #endif
 static char *wcn_fw_path[WCN_FW_MAX_PATH_NUM] = {
 	UNISOC_FW_PATH_DEFAULT,		/* most of projects */
-	"/lib/firmware/"		/* allwinner r328... */
+	"/run/current-system/firmware/"		/* allwinner r328... */
 };
 #define WCN_FW_NAME	"wcnmodem.bin"
 #define GNSS_FW_NAME	"gnssmodem.bin"
